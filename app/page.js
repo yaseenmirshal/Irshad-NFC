@@ -4,16 +4,15 @@ import Image from 'next/image';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import {
-  FaTwitter,
-  FaLinkedin,
+
   FaInstagram,
   FaFacebook,
   FaYoutube,
-  FaGithub,
+
   FaWhatsapp,
-  FaPhoneAlt,        // ✅ Use this instead of FaPhoneAlt
+  FaPhoneAlt,       
   FaEnvelope,
-  FaBehance,
+
   FaDownload,
 } from 'react-icons/fa';
 
@@ -67,7 +66,7 @@ export default function Home() {
           data-aos="zoom-in"
         >
           <Image
-            src="/yaseen.png"
+            src="/irshad.png"
             alt="Profile"
             width={144}
             height={144}
@@ -117,21 +116,19 @@ export default function Home() {
           data-aos="fade-up"
           data-aos-delay="600"
         >
-          <SocialLink icon={<FaInstagram />} href="https://www.instagram.com/yaseen_mirshal/" />
+          <SocialLink icon={<FaInstagram />} href="https://www.instagram.com/irshad_maazank/" />
           <SocialLink icon={<FaWhatsapp />} href="https://wa.me/+919947234099" />
-          <SocialLink icon={<FaLinkedin />} href="https://www.linkedin.com/in/yaseen-mirshal/" />
-          <SocialLink icon={<FaYoutube />} href="https://www.youtube.com/channel/UC-alWGLEsO8jUZaHeNBvgTA" />
-          <SocialLink icon={<FaGithub />} href="https://github.com/yaseenmirshal" />
-          <SocialLink icon={<FaTwitter />} href="https://x.com/yaseen_mirshal" />
-          <SocialLink icon={<FaFacebook />} href="https://www.facebook.com/yaseen.mirshal.5/" />
-          <SocialLink icon={<FaBehance />} href="https://www.behance.net/yaseenmirshal" />
+          {/* <SocialLink icon={<FaLinkedin />} href="https://www.linkedin.com/in/yaseen-mirshal/" />  */}
+          <SocialLink icon={<FaYoutube />} href="https://www.youtube.com/@Irshad_Maazank" />
+          {/* <SocialLink icon={<FaGithub />} href="https://github.com/yaseenmirshal" />  */}
+          {/* <SocialLink icon={<FaTwitter />} href="https://x.com/yaseen_mirshal" />  */}
+          <SocialLink icon={<FaFacebook />} href="https://www.facebook.com/irshadmazankinart" />
+          {/* <SocialLink icon={<FaBehance />} href="https://www.behance.net/yaseenmirshal" />  */}
         </div>
 
         {/* Buttons */}
         <div className="flex justify-center gap-4 pb-2">
-          <a href="https://yaseen-mirshal-portfolio.vercel.app/">
-            <Button text="Portfolio" />
-          </a>
+        
           <a href="/YaseenMirshal.vcf" download="Yaseen_Mirshal_Contact">
             <Button text="Save Contact" isPrimary icon={<FaDownload />} />
           </a>
