@@ -151,7 +151,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="hover:scale-105 transition-transform duration-300"
               >
-                <CompanyCard name={company.name} logo={company.logo} />
+                <CompanyCard name={company.name} logo={company.logo} designation={company.designation} />
               </a>
             ))}
           </div>
@@ -167,15 +167,13 @@ export default function Home() {
       target="_blank"
       rel="noopener noreferrer"
     >
-      RanzomTech
+      Brandlee
     </a>
   </p>
     </div>
 
   );
 }
-
-
 
 // Contact Card Component
 const ContactCard = ({ icon, text }) => (
@@ -252,27 +250,32 @@ const Button = ({ text, isPrimary, icon, isShare, onClick }) => (
 );
 
 // CompanyCard Component
-function CompanyCard({ name, logo }) {
+function CompanyCard({ name, logo, designation }) {
   return (
-    <div className="flex flex-col items-center w-40 h-40 bg-white backdrop-blur-md p-4 rounded-lg shadow-md">
-      <Image
-        src={logo}
-        alt={name}
-        width={100}
-        height={100}
-        className="object-contain mb-3 rounded-2xl"
-      />
+    <div className="flex flex-col items-center w-40 h-52 mb-5  rounded-lg ">
+      <div className="w-full h-full flex items-center justify-center mb-3 bg-white rounded-xl overflow-hidden border border-gray-200">
+        <Image
+          src={logo}
+          alt={name}
+          width={96}
+          height={96}
+          className="object-cover w-full h-full"
+        />
+      </div>
       <p className="text-sm font-semibold text-gray-700 text-center mt-auto">
         {name}
       </p>
+      {designation && (
+        <p className="text-xs text-gray-500 text-center mt-1">{designation}</p>
+      )}
     </div>
   );
 }
 
 // Companies array
 const companies = [
-  { name: 'G-Dot', logo: '/G-DOT LOGO.png', url: 'https://gdotinternational.com' },
-  { name: 'Al-Hamd Traders', logo: '/alhamdlogo.png', url: 'https://www.instagram.com/alhamdtraders.in?igsh=a242bWQxeWd3NDVo' },
-  { name: 'Inart ', logo: '/inartlogo.png', url: 'https://www.instagram.com/inart_concept?igsh=ZHNsZDFwMW8zM3Bl' },
-  { name: 'Brandlee', logo: '/brandleelogo.jpeg', url: 'https://www.instagram.com/the.brandlee?igsh=Ym4yOWE1dTZyNnhw' },
+  { name: 'G-Dot International', logo: '/G-DOT LOGO.png', url: 'https://gdotinternational.com', designation: 'CEO' },
+  { name: 'Inart Concept', logo: '/inartlogo.png', url: 'https://www.instagram.com/inart_concept?igsh=ZHNsZDFwMW8zM3Bl', designation: 'Founder' },
+  { name: 'Al-Hamd Traders', logo: '/alhamdlogo.png', url: 'https://www.instagram.com/alhamdtraders.in?igsh=a242bWQxeWd3NDVo', designation: 'Managing Director' },
+  { name: 'Brandlee', logo: '/brandleelogo.jpeg', url: 'https://www.instagram.com/the.brandlee?igsh=Ym4yOWE1dTZyNnhw', designation: 'Founder' },
 ];
