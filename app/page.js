@@ -33,10 +33,10 @@ export default function Home() {
     return (
       <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
         <Image
-          src="/ymloading.png"
+          src="/circle.jpg"
           alt="Loading"
-          width={300}
-          height={300}
+          width={100}
+          height={100}
           priority
           className="animate-pulse"
         />
@@ -124,7 +124,7 @@ export default function Home() {
         {/* Buttons */}
         <div className="flex justify-center gap-4 pb-2">
           <ShareButton />
-          <a href="/irshadvcf.vcf" download="Irshad_Maazank_Contact">
+          <a href="/Irshad.vcf" download="Irshad_Maazank_Contact">
             <Button text="Save Contact" isPrimary icon={<FaDownload />} />
           </a>
         </div>
@@ -161,7 +161,7 @@ export default function Home() {
        {/* Footer */}
  <p className="text-center text-gray-500 text-sm mt-6 pb-5">
  Powered by{' '}
- <span className="font-bold text-gray-700"  target="_blank" href="https://ranzomtech.com/">RanzomTech</span>
+ <span className="font-bold text-gray-700"  target="_blank" href="https://www.instagram.com/ranzomtech?igsh=OGV3MW4xZXdlaW5z">RanzomTech</span>
 </p>
     </div>
 
