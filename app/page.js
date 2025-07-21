@@ -14,6 +14,7 @@ import {
   FaEnvelope,
 
   FaDownload,
+  FaShareAlt,
 } from 'react-icons/fa';
 
 export default function Home() {
@@ -128,7 +129,7 @@ export default function Home() {
 
         {/* Buttons */}
         <div className="flex justify-center gap-4 pb-2">
-        
+          <ShareButton />
           <a href="/YaseenMirshal.vcf" download="Yaseen_Mirshal_Contact">
             <Button text="Save Contact" isPrimary icon={<FaDownload />} />
           </a>
@@ -165,14 +166,53 @@ const SocialLink = ({ href, icon }) => (
 );
 
 
+// Share Button Component
+function ShareButton() {
+  const handleShare = async () => {
+    const shareData = {
+      title: 'Irshad Maazank',
+      text: 'Check out Irshad Maazank’s digital card!',
+      url: typeof window !== 'undefined' ? window.location.href : '',
+    };
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        // User cancelled or error
+      }
+    } else if (navigator.clipboard) {
+      try {
+        await navigator.clipboard.writeText(shareData.url);
+        alert('Link copied to clipboard!');
+      } catch (err) {
+        alert('Could not copy link.');
+      }
+    } else {
+      alert('Sharing not supported.');
+    }
+  };
+  return (
+    <Button
+      text="Share"
+      icon={<FaShareAlt />}
+      isShare
+      onClick={handleShare}
+    />
+  );
+}
+
 // Button Component
-const Button = ({ text, isPrimary, icon }) => (
+const Button = ({ text, isPrimary, icon, isShare, onClick }) => (
   <button
     className={`flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold text-md shadow-md transition-transform duration-300 ${
       isPrimary
         ? 'bg-gradient-to-r from-gray-800 to-gray-600 hover:from-gray-700 hover:to-gray-500 text-white'
+        : isShare
+        ? 'bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 text-white'
         : 'bg-gray-300 hover:bg-gray-400 text-gray-700'
     } hover:scale-110`}
+    type="button"
+    onClick={onClick}
   >
     {icon && <span>{icon}</span>}
     {text}
