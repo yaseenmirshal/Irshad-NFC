@@ -8,11 +8,9 @@ import {
   FaInstagram,
   FaFacebook,
   FaYoutube,
-
   FaWhatsapp,
   FaPhoneAlt,       
   FaEnvelope,
-
   FaDownload,
   FaShareAlt,
 } from 'react-icons/fa';
@@ -51,12 +49,12 @@ export default function Home() {
       {/* Banner */}
       <div className="relative w-full h-44 bg-gradient-to-r from-gray-800 to-gray-600 shadow-lg">
         <Image
-          src="/banner.png"
+          src="/bannerirsh.png"
           alt="Banner"
           layout="fill"
           objectFit="cover"
           priority
-          className="opacity-50"
+          className="opacity-100"
         />
       </div>
 
@@ -91,26 +89,23 @@ export default function Home() {
         >
           Entrepreneur | Architectural Designer
         </p>
-        
-{/* Contact Cards */}
-<div
-  className="flex flex-col items-center space-y-4 mb-8"
-  data-aos="fade-up"
-  data-aos-delay="400"
->
-  <ContactCard
-    href="tel:+919946260777"
-    icon={<FaPhoneAlt size={20} />}
-    text="+91 9946260777"
-  />
-  <ContactCard
-    href="mailto:irshadmaazank@gmail.com"
-    icon={<FaEnvelope size={20} />}
-    text="irshadmaazank@gmail.com"
-  />
-</div>
-
-
+        {/* Contact Cards */}
+        <div
+          className="flex flex-col items-center space-y-4 mb-8"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          <ContactCard
+            href="tel:+919946260777"
+            icon={<FaPhoneAlt size={20} />}
+            text="+91 9946260777"
+          />
+          <ContactCard
+            href="mailto:irshadmaazank@gmail.com"
+            icon={<FaEnvelope size={20} />}
+            text="irshadmaazank@gmail.com"
+          />
+        </div>
         {/* Social Media Icons */}
         <div
           className="flex justify-center gap-5 flex-wrap mb-8"
@@ -126,27 +121,54 @@ export default function Home() {
           <SocialLink icon={<FaFacebook />} href="https://www.facebook.com/share/16wqMamjpn/" />
           {/* <SocialLink icon={<FaBehance />} href="https://www.behance.net/yaseenmirshal" />  */}
         </div>
-
         {/* Buttons */}
         <div className="flex justify-center gap-4 pb-2">
           <ShareButton />
-          <a href="/IrshadMaazank.vcf">
+          <a href="/irshadvcf.vcf" download="Irshad_Maazank_Contact">
             <Button text="Save Contact" isPrimary icon={<FaDownload />} />
           </a>
         </div>
-        <p className="text-xs text-gray-500 mt-1">
-          On mobile, tap ‘Open in Contacts’ after download to save.
-        </p>
+       
+
+        {/* Companies Section */}
+        <div className="mt-12">
+          <h2
+            className="text-2xl font-semibold mb-6 text-gray-800"
+            // data-aos="fade-right"
+          >
+            Companies
+          </h2>
+          <div
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"
+            // data-aos="fade-up"
+            data-aos-delay="800"
+          >
+            {companies.map((company, index) => (
+              <a
+                key={index}
+                href={company.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:scale-105 transition-transform duration-300"
+              >
+                <CompanyCard name={company.name} logo={company.logo} />
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
 
-      {/* Footer */}
-      <p className="text-center text-gray-500 text-sm mt-6 pb-5">
-        Powered by{' '}
-        <span className="font-bold text-gray-700"  target="_blank" href="https://ranzomtech.com/">RanzomTech</span>
-      </p>
+       {/* Footer */}
+ <p className="text-center text-gray-500 text-sm mt-6 pb-5">
+ Powered by{' '}
+ <span className="font-bold text-gray-700"  target="_blank" href="https://ranzomtech.com/">RanzomTech</span>
+</p>
     </div>
+
   );
 }
+
+
 
 // Contact Card Component
 const ContactCard = ({ icon, text }) => (
@@ -221,3 +243,29 @@ const Button = ({ text, isPrimary, icon, isShare, onClick }) => (
     {text}
   </button>
 );
+
+// CompanyCard Component
+function CompanyCard({ name, logo }) {
+  return (
+    <div className="flex flex-col items-center w-40 h-40 bg-white backdrop-blur-md p-4 rounded-lg shadow-md">
+      <Image
+        src={logo}
+        alt={name}
+        width={100}
+        height={100}
+        className="object-contain mb-3 rounded-2xl"
+      />
+      <p className="text-sm font-semibold text-gray-700 text-center mt-auto">
+        {name}
+      </p>
+    </div>
+  );
+}
+
+// Companies array
+const companies = [
+  { name: 'G-Dot', logo: '/G-DOT LOGO.png', url: 'https://gdotinternational.com' },
+  { name: 'Al-Hamd Traders', logo: '/alhamdlogo.png', url: 'https://www.instagram.com/alhamdtraders.in?igsh=a242bWQxeWd3NDVo' },
+  { name: 'Inart ', logo: '/inartlogo.png', url: 'https://www.instagram.com/inart_concept?igsh=ZHNsZDFwMW8zM3Bl' },
+  { name: 'Brandlee', logo: '/brandleelogo.jpeg', url: 'https://www.instagram.com/the.brandlee?igsh=Ym4yOWE1dTZyNnhw' },
+];
