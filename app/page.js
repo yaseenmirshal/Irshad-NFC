@@ -123,17 +123,20 @@ export default function Home() {
           <SocialLink icon={<FaYoutube />} href="https://www.youtube.com/@Irshad_Maazank" />
           {/* <SocialLink icon={<FaGithub />} href="https://github.com/yaseenmirshal" />  */}
           {/* <SocialLink icon={<FaTwitter />} href="https://x.com/yaseen_mirshal" />  */}
-          <SocialLink icon={<FaFacebook />} href="https://www.facebook.com/irshadmazankinart" />
+          <SocialLink icon={<FaFacebook />} href="https://www.facebook.com/share/16wqMamjpn/" />
           {/* <SocialLink icon={<FaBehance />} href="https://www.behance.net/yaseenmirshal" />  */}
         </div>
 
         {/* Buttons */}
         <div className="flex justify-center gap-4 pb-2">
           <ShareButton />
-          <a href="/YaseenMirshal.vcf" download="Yaseen_Mirshal_Contact">
+          <a href="/IrshadMaazank.vcf">
             <Button text="Save Contact" isPrimary icon={<FaDownload />} />
           </a>
         </div>
+        <p className="text-xs text-gray-500 mt-1">
+          On mobile, tap ‘Open in Contacts’ after download to save.
+        </p>
       </div>
 
       {/* Footer */}
