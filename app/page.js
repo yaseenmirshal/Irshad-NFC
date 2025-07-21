@@ -159,10 +159,17 @@ export default function Home() {
       </div>
 
        {/* Footer */}
- <p className="text-center text-gray-500 text-sm mt-6 pb-5">
- Powered by{' '}
- <span className="font-bold text-gray-700"  target="_blank" href="https://www.instagram.com/ranzomtech?igsh=OGV3MW4xZXdlaW5z">RanzomTech</span>
-</p>
+  <p className="text-center text-gray-500 text-sm mt-6 pb-5">
+    Powered by{' '}
+    <a
+      className="font-bold text-gray-700 hover:underline"
+      href="https://www.instagram.com/ranzomtech?igsh=OGV3MW4xZXdlaW5z"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      RanzomTech
+    </a>
+  </p>
     </div>
 
   );
