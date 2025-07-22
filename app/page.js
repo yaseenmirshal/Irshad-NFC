@@ -163,7 +163,7 @@ export default function Home() {
     Powered by{' '}
     <a
       className="font-bold text-gray-700 hover:underline"
-      href="https://www.instagram.com/ranzomtech?igsh=OGV3MW4xZXdlaW5z"
+      href="https://www.instagram.com/the.brandlee/"
       target="_blank"
       rel="noopener noreferrer"
     >
